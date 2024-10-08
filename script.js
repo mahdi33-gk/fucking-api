@@ -9,13 +9,13 @@ const displaycategories = (categories) => {
     categories.forEach(item => {
         console.log(item)
 
-        const button = document.createElement("button");
-        button.classList = "btn";
+        const button = document.createElement("div");
+        button.classList = "btn flex flex-row";
         button.innerText =item.category;
         button.innerHTML =`
-        <img
-        src="${item.category_icon} ${item.category} "  
-        />
+        <img class="w-6 " src="${item.category_icon}" alt="${item.category}" /> 
+            ${item.category}  
+        
         `
         
 

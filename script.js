@@ -12,6 +12,11 @@ const displaycategories = (categories) => {
         const button = document.createElement("button");
         button.classList = "btn";
         button.innerText =item.category;
+        button.innerHTML =`
+        <img
+        src="${item.category_icon} ${item.category} "  
+        />
+        `
         
 
         categoricontainer.append(button);

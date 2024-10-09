@@ -113,7 +113,7 @@ const alldatapost = (posts) => {
 
                 <div class="border-t-2 mt-2 ">
                     <div class="mx-auto flex justify-between items-center mt-2"> 
-                       <button id="cats" class=" text-[7px]  shadow-green-800 border-[.1px] px-2 py-1 rounded-md"><i class="text-green-950 fa-regular fa-thumbs-up"></i></button>
+                       <button id="cats" onclick="addpic('${item.image}')" class=" text-[7px]  shadow-green-800 border-[.1px] px-2 py-1 rounded-md"><i class="text-green-950 fa-regular fa-thumbs-up"></i></button>
                        <button id="dogs" class="font-bold text-[8px]  shadow-green-950 border-[.1px] px-2 py-1 rounded-md text-primaryr ">Adopt</button>
                        <button id="rabbit" class="font-bold text-[8px]  shadow-green-950 border-[.1px] px-2 py-1 rounded-md text-primaryr">Details</button>
                        
@@ -132,6 +132,19 @@ const alldatapost = (posts) => {
     });
 }; 
 
+
+
+// like button
+const addpic = (image) => {
+    const piccontainer = document.getElementById('pic-container')
+    const div = document.createElement('div')
+    div.classList.add("flex", "flex-row","justify-center","gap-y-2", "px-1", "py-1")
+    div.innerHTML =`
+    <img src="${image}" class=" max-w-[100px] max-h-20 shadow-md rounded-md px-2 py-1 m-0 " />
+    `
+   
+    piccontainer.appendChild(div)
+}
 
 
 
@@ -161,7 +174,7 @@ const loadspinner = () =>{
     
 }
 const mainloaderspin = () => {
-    document.getElementById("spinner").style.display= "block";
+    document.getElementById("spinner").style.display= "flex";
 
 
     setTimeout(function(){

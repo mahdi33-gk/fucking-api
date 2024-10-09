@@ -96,22 +96,22 @@ const alldatapost = (posts) => {
         postElement.classList = "post-item";
         postElement.innerHTML = `
 
-            <div class="px-3 py-2  shadow-2xl rounded-xl boeder-2 w-[200px] border-gray-400">
+            <div class="px-2 py-2 rounded-xl w-[150px] shadow-green-950 border-[2px]">
                 <img src="${item.image}" alt="${item.name}" class=" ">
-                w-[250px]
                 <h3 class="font-bold text-2xl mb-1">${item.pet_name}</h3>
-                <p class="text-gray-500 text-sm"><i class="mr-1 fa-solid fa-border-none"></i>Breed:${item.breed}</p>
-                <p class="text-gray-500 text-sm"><i class="mr-1 fa-solid fa-calendar-days"></i>Birth: ${item.date_of_birth}</p>
+                <p class="text-gray-500 text-[10px]"><i class="mr-1 fa-solid fa-border-none"></i>Breed: ${item.breed}</p>
+                <p class="text-gray-500 text-[10px]"><i class="mr-1 fa-solid fa-calendar-days"></i>Birth: ${item.date_of_birth}</p>
                 
-                <p class="text-gray-500 text-sm"><i class="mr-1 fa-solid fa-venus"></i>Gender: ${item.gender}</p>
+                <p class="text-gray-500 text-[10px]"><i class="mr-1 fa-solid fa-venus"></i>Gender: ${item.gender}</p>
                 
-                <p class="text-gray-500 text-sm"><i class="mr-1 fa-solid fa-dollar-sign"></i>Price: ${item.price}$</p>
+                <p class="text-gray-500 text-[10px]"><i class="mr-1 fa-solid fa-dollar-sign"></i>Price: ${item.price}$</p>
 
                 <div class="border-t-2 mt-2 ">
                     <div class="mx-auto flex justify-between items-center mt-2"> 
-                       <button class="w-[50px] border-blue-50 border-2 text-primaryr btn"><i class="fa-regular fa-thumbs-up"></i></button>
-                       <button class="w-[50px] text-primaryr btn">Adopt</button>
-                       <button class="w-[50px] btn text-primaryr">Details</button>
+                       <button id="cats" class=" text-[7px]  shadow-green-800 border-[.1px] px-2 py-1 rounded-md"><i class="text-green-950 fa-regular fa-thumbs-up"></i></button>
+                       <button id="dogs" class="font-bold text-[8px]  shadow-green-950 border-[.1px] px-2 py-1 rounded-md text-primaryr ">Adopt</button>
+                       <button id="rabbit" class="font-bold text-[8px]  shadow-green-950 border-[.1px] px-2 py-1 rounded-md text-primaryr">Details</button>
+                       
                     </div>
                 </div>
 
@@ -129,3 +129,8 @@ const alldatapost = (posts) => {
 
 loadcategories();
 allpost();
+
+
+// active button function
+
+const activebtn = document.getElementById('')

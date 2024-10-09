@@ -46,6 +46,9 @@
 
 // loadcategories();
 
+// mainloaderspin();
+
+
 
 
 const loadcategories = () => {
@@ -64,12 +67,14 @@ const displaycategories = (categories) => {
     categories.forEach(item => {
         console.log("Category Item:", item); 
 
-        const button = document.createElement("div");
+        const button = document.createElement("button");
         button.classList = "btn flex flex-row";
         button.innerHTML = `
+            
             <img class="w-6" src="${item.category_icon}" alt="${item.category}" />
-            ${item.category}
+            ${item.category} 
         `;
+        
 
         categoricontainer.append(button);
     });
@@ -125,12 +130,44 @@ const alldatapost = (posts) => {
         
         heythere.append(postElement);
     });
-};
+}; 
 
-loadcategories();
-allpost();
+
 
 
 // active button function
 
-const activebtn = document.getElementById('')
+
+    // donationTab.classList.remove('bg-primaryr')
+
+    // document.getElementById('cards').classList.add('hidden')
+    // document.getElementById('history-section').classList.add('hidden')
+    // document.getElementById('history-section').classList.remove('hidden')
+
+
+// document.getElementById('spinner').innerHTML = `
+// 
+// `
+// const makespinner = document.createElement('div')
+// makespinner.innerHTML =`
+
+// `
+
+
+const loadspinner = () =>{
+    document.getElementById("spinner").style.display= "none";
+    allpost();
+    loadcategories();
+    
+}
+const mainloaderspin = () => {
+    document.getElementById("spinner").style.display= "block";
+
+
+    setTimeout(function(){
+        loadspinner()
+        
+    },3000)
+}
+mainloaderspin()
+

@@ -61,6 +61,16 @@ const loadcategories = () => {
         .catch(error => console.error("Error fetching categories:", error));
 };
 
+const petCategory = (id) => {
+    alert(id)
+
+
+    fetch(`https://openapi.programming-hero.com/api/peddy/category/${id}`)
+        .then(res => res.json())
+        .then(data => console.log(data))
+        .catch(error => console.error("Error fetching category data:", error));
+
+}
 
 const displaycategories = (categories) => {
     const categoricontainer = document.getElementById('post-container');
@@ -138,7 +148,7 @@ const alldatapost = (posts) => {
 const addpic = (image) => {
     const piccontainer = document.getElementById('pic-container')
     const div = document.createElement('div')
-    div.classList.add("grid", "gap-4","col-span-1",  "px-1", "py-1")
+    div.classList.add("grid", "gap-4","col-span-2",  "px-1", "py-1")
     div.innerHTML =`
     <div class=""><img src="${image}" class=" max-w-[100px]  shadow-md rounded-md px-2 py-1 m-0 " /></div>
     `
@@ -180,7 +190,7 @@ const mainloaderspin = () => {
     setTimeout(function(){
         loadspinner()
         
-    },3000)
+    },2000)
 }
-mainloaderspin()
+mainloaderspin();
 

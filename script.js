@@ -68,11 +68,11 @@ const displaycategories = (categories) => {
         console.log("Category Item:", item); 
 
         const button = document.createElement("button");
-        button.classList = "btn flex flex-row";
+        
         button.innerHTML = `
+            <button onclick="petCategory('$(item.id)')" class="btn hover:bg-[#8fb6b8] hover:rounded-3xl hover:text-white flex flex-row"><img class="w-6" src="${item.category_icon}" alt="${item.category}" />
+            ${item.category}  </button>
             
-            <img class="w-6" src="${item.category_icon}" alt="${item.category}" />
-            ${item.category} 
         `;
         
 
@@ -138,7 +138,7 @@ const alldatapost = (posts) => {
 const addpic = (image) => {
     const piccontainer = document.getElementById('pic-container')
     const div = document.createElement('div')
-    div.classList.add("flex", "flex-row","justify-center","gap-y-2", "px-1", "py-1")
+    div.classList.add("grid", "gap-4","grid-cols-2", "grid-rows-2", "px-1", "py-1")
     div.innerHTML =`
     <img src="${image}" class=" max-w-[100px] max-h-20 shadow-md rounded-md px-2 py-1 m-0 " />
     `

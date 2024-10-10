@@ -61,16 +61,24 @@ const loadcategories = () => {
         .catch(error => console.error("Error fetching categories:", error));
 };
 
-const petCategory = (id) => {
-    alert(id)
+const petCategory = (category) => {
+    // alert(category);
 
+    
+    document.getElementById('heythere').innerHTML = '';
 
-    fetch(`https://openapi.programming-hero.com/api/peddy/category/${id}`)
+    
+    fetch(`https://openapi.programming-hero.com/api/peddy/category/${category}`)
         .then(res => res.json())
-        .then(data => console.log(data))
+        .then(data => {
+            console.log("Category Data:", data);
+            
+            alldatapost(data.pets);
+        })
         .catch(error => console.error("Error fetching category data:", error));
+};
 
-}
+
 
 const displaycategories = (categories) => {
     const categoricontainer = document.getElementById('post-container');
@@ -80,7 +88,7 @@ const displaycategories = (categories) => {
         const button = document.createElement("button");
         
         button.innerHTML = `
-            <button onclick="petCategory('$(item.id)')" class="btn hover:bg-[#8fb6b8] hover:rounded-3xl hover:text-white flex flex-row"><img class="w-6" src="${item.category_icon}" alt="${item.category}" />
+            <button onclick="petCategory('${item.id}')" class="btn hover:bg-[#8fb6b8] hover:rounded-3xl hover:text-white flex flex-row"><img class="w-6" src="${item.category_icon}" alt="${item.category}" />
             ${item.category}  </button>
             
         `;
@@ -148,9 +156,9 @@ const alldatapost = (posts) => {
 const addpic = (image) => {
     const piccontainer = document.getElementById('pic-container')
     const div = document.createElement('div')
-    div.classList.add("grid", "gap-4","col-span-2",  "px-1", "py-1")
+    div.classList.add("px-1", "py-1")
     div.innerHTML =`
-    <div class=""><img src="${image}" class=" max-w-[100px]  shadow-md rounded-md px-2 py-1 m-0 " /></div>
+    <div class=""><img src="${image}" class="max-w-[80px] md:max-w-[100px]  shadow-md rounded-md px-2 py-1 m-0 " /></div>
     `
    
     piccontainer.appendChild(div)

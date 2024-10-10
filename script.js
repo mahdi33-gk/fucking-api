@@ -138,9 +138,9 @@ const alldatapost = (posts) => {
 const addpic = (image) => {
     const piccontainer = document.getElementById('pic-container')
     const div = document.createElement('div')
-    div.classList.add("grid", "gap-4","grid-cols-2", "grid-rows-2", "px-1", "py-1")
+    div.classList.add("grid", "gap-4","col-span-1",  "px-1", "py-1")
     div.innerHTML =`
-    <img src="${image}" class=" max-w-[100px] max-h-20 shadow-md rounded-md px-2 py-1 m-0 " />
+    <div class=""><img src="${image}" class=" max-w-[100px]  shadow-md rounded-md px-2 py-1 m-0 " /></div>
     `
    
     piccontainer.appendChild(div)
